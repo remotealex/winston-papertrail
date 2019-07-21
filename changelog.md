@@ -1,4 +1,7 @@
-#v1.0.2
+# v1.1.0 #
+- Upgraded winston to latest and migrated winston-papertrail to work with >3 [remotealex]
+
+# v1.0.2 #
 - Fixed a bug when logging error objects [dmiddlecamp][7]
 
 # v1.0.1 #

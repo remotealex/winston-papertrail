@@ -58,7 +58,6 @@ There are a number of optional settings:
 - `program` - The program for your transport, defaults to `default`
 - `facility` - The syslog facility for this transport, defaults to `daemon`
 - `logFormat` - A function to format your log message before sending, see below
-- `colorize` - Enable colors in logs, defaults to `false`
 - `inlineMeta` - Inline multi-line messages, defaults to `false`
 - `handleExceptions` - Tell this Transport to handle exceptions, defaults to `false`
 - `flushOnClose` - Flush any queued logs prior to closing/exiting
@@ -114,8 +113,7 @@ var logger,
 		level: 'debug',
 		timestamp: function() {
 			return new Date().toString();
-		},
-		colorize: true
+		}
 	}),
 	ptTransport = new Papertrail({
 		host: 'logs.papertrailapp.com',
@@ -149,27 +147,6 @@ var logger = new winston.Logger({
 });
 
 logger.info('this is my message ' + new Date().getTime());
-```
-
-### Colorization
-
-The `winston-papertrail` transport supports colorization with `winston`. Currently, the ANSI codes used for escape sequences are part of the search index, so please be advised when using colorization.
-
-```Javascript
-var winston = require('winston'),
-    Papertrail = require('winston-papertrail').Papertrail;
-
-var logger = new winston.Logger({
-    transports: [
-        new Papertrail({
-            host: 'logs.papertrailapp.com',
-            port: 12345, // your port here
-            colorize: true
-        })
-    ]
-});
-
-logger.info('Hello from colorized winston', logger);
 ```
 
 ### Closing the transport

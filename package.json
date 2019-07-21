@@ -1,7 +1,7 @@
 {
   "name": "winston-papertrail",
   "description": "A Papertrail transport for winston",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "author": "Ken Perkins <ken.perkins@rackspace.com>",
   "repository": {
     "type": "git",
@@ -18,13 +18,14 @@
   "devDependencies": {
     "mocha": "^2.0.1",
     "should": "^4.3.0",
-    "winston": ">=0.6.x"
+    "winston": ">=3.2.1"
   },
   "dependencies": {
-    "glossy": "^0.1.7"
+    "glossy": "^0.1.7",
+    "winston-transport": "^4.3.0"
   },
   "peerDependencies": {
-    "winston": ">=0.6.x"
+    "winston": ">=3.2.1"
   },
   "main": "./lib/winston-papertrail",
   "scripts": {
